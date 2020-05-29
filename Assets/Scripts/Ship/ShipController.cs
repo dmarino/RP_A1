@@ -77,7 +77,6 @@ public class ShipController : MonoBehaviour
     {
 
         GameObject b = Instantiate(bullet, shootingPoint.position, Quaternion.identity);
-        b.GetComponent<Rigidbody2D>().velocity = Vector3.up * bulletSpeed;
     }
 
 }

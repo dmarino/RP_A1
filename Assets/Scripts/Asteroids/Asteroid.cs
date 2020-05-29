@@ -7,9 +7,14 @@ public class Asteroid : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Bullet"))
+        if (other.gameObject.CompareTag("Player"))
         {
             onRequireDestroy?.Invoke(this);
+        }
+        else if(other.gameObject.CompareTag("Bullet")){
+
+            onRequireDestroy?.Invoke(this);
+            Destroy(other.gameObject);
         }
     }
     
