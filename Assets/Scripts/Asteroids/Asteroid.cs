@@ -5,9 +5,9 @@ public class Asteroid : MonoBehaviour
 {
     public event Action<Asteroid> onRequireDestroy;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             onRequireDestroy?.Invoke(this);
         }

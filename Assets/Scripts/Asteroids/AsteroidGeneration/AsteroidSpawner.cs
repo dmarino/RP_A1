@@ -1,6 +1,5 @@
 ﻿//Copyright (C) 2020, Nicolas Morales Escobar. All rights reserved.
 
-using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -13,11 +12,6 @@ public class AsteroidSpawner
     [SerializeField] private AsteroidPool asteroidPool;
     [SerializeField] private Vector2 xMinMax;
 
-    [Header("Procedural Generation")]
-    [SerializeField] private float xFactor = 1.2f;
-    [SerializeField] private float yFactor = 1.2f;
-    
-    
     private float timer;
 
     public void Initialize()
