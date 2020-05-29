@@ -1,8 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class ShipController : MonoBehaviour
@@ -26,6 +25,9 @@ public class ShipController : MonoBehaviour
 
     [SerializeField]
     private Transform shootingPoint;
+
+
+    [SerializeField] GameObject gameOverScreen;
 
 
 
@@ -77,6 +79,22 @@ public class ShipController : MonoBehaviour
     {
 
         GameObject b = Instantiate(bullet, shootingPoint.position, Quaternion.identity);
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag.Equals("Asteroid")){
+            Destroy(gameObject);
+            StartCoroutine(GameOver());
+        }
+    }
+
+    IEnumerator GameOver(){
+
+        gameOverScreen.SetActive(true);
+        yield return new WaitForSeconds (0.1f);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }
