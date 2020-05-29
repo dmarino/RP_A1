@@ -85,7 +85,6 @@ public class ShipController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.tag.Equals("Asteroid")){
-            Destroy(gameObject);
             StartCoroutine(GameOver());
         }
     }
@@ -93,8 +92,8 @@ public class ShipController : MonoBehaviour
     IEnumerator GameOver(){
 
         gameOverScreen.SetActive(true);
-        yield return new WaitForSeconds (0.1f);
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        yield return new WaitForSeconds (5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }
