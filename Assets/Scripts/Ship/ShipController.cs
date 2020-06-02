@@ -1,7 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class ShipController : MonoBehaviour
@@ -9,8 +9,6 @@ public class ShipController : MonoBehaviour
 
     [SerializeField]
     private float _moveOffset = 10f;
-
-
 
     [Header("Fire")]
 
@@ -26,10 +24,20 @@ public class ShipController : MonoBehaviour
     [SerializeField]
     private Transform shootingPoint;
 
+    [Header("Game Managment")]
     [SerializeField] GameObject gameOverScreen;
 
     //this is to chect that the player wont go out of bouds
     private Vector2 screenBounds;
+
+
+    [Header("PowerUp")]
+
+    [SerializeField] int timeOfPowerUp=10;
+
+    private int currentPowerUpTime=0;
+
+    [SerializeField] Slider powerUpSlider;
 
     //reference to the rigidBody
     private Rigidbody2D rb;
@@ -42,6 +50,8 @@ public class ShipController : MonoBehaviour
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
 
         InvokeRepeating("Fire", 0.33f, _fireRate);
+
+        powerUpSlider.maxValue = timeOfPowerUp;
 
     }
 
@@ -74,7 +84,31 @@ public class ShipController : MonoBehaviour
     private void Fire()
     {
 
-        GameObject b = Instantiate(bullet, shootingPoint.position, Quaternion.identity);
+        Instantiate(bullet, shootingPoint.position, Quaternion.identity);
+    }
+
+
+    public void PickUpPowerUp(){
+
+        if(currentPowerUpTime>0){
+            currentPowerUpTime= timeOfPowerUp;
+        }
+        else{
+            currentPowerUpTime= timeOfPowerUp;
+            changeFire(false);
+            StartCoroutine(PowerUp());
+        }
+    }
+
+    private void changeFire(bool normal){
+
+        float rate = _fireRate;
+        if(!normal){ rate = rate/10; }
+
+        Debug.Log(rate);
+
+        CancelInvoke("Fire");
+        InvokeRepeating("Fire", 0.33f, rate);
     }
 
 
@@ -94,6 +128,24 @@ public class ShipController : MonoBehaviour
         gameOverScreen.SetActive(true);
         yield return new WaitForSeconds (5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+
+    IEnumerator PowerUp(){
+
+        //shows slider
+        powerUpSlider.gameObject.SetActive(true);
+
+        while(currentPowerUpTime >0){
+
+            powerUpSlider.value = currentPowerUpTime;
+            currentPowerUpTime--;
+            yield return new WaitForSeconds (1f);
+        }
+
+        changeFire(true);
+        powerUpSlider.gameObject.SetActive(false);
+
     }
 
 }

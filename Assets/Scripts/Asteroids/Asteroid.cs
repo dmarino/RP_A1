@@ -13,10 +13,12 @@ public class Asteroid : MonoBehaviour
         }
         else if(other.gameObject.CompareTag("Bullet")){
 
+            ScoreManager.instance.AsteroidDestroyed();
+            PickUpController.instance.SpawnPickUp(transform);
+
             onRequireDestroy?.Invoke(this);
             Destroy(other.gameObject);
 
-            ScoreManager.instance.AsteroidDestroyed();
         }
     }
     

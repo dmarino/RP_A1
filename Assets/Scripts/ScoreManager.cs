@@ -9,7 +9,9 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager instance;
 
     public Text scoreText;
-    [SerializeField] private int asteroidDestroyedScore=10;
+    [SerializeField] private int asteroidDestroyedScore=5;
+    
+    [SerializeField] private int moneyBagScore=20;
 
     private int score=0;
     private bool isAlive;
@@ -30,6 +32,10 @@ public class ScoreManager : MonoBehaviour
     }
     public void AsteroidDestroyed(){
         score += asteroidDestroyedScore;
+    }
+
+    public void MoneyCollected(){
+        score+= moneyBagScore;
     }
 
 

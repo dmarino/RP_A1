@@ -154,6 +154,8 @@ MonoBehaviour:
   bulletSpeed: 2
   shootingPoint: {fileID: 3767778074709268538}
   gameOverScreen: {fileID: 0}
+  timeOfPowerUp: 5
+  powerUpSlider: {fileID: 0}
 --- !u!61 &3767778075209132637
 BoxCollider2D:
   m_ObjectHideFlags: 0
