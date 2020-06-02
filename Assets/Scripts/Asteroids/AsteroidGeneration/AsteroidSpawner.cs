@@ -14,6 +14,7 @@ public class AsteroidSpawner
     [SerializeField] private AsteroidPool asteroidPool;
     [SerializeField] private Vector2 xMinMax;
     [SerializeField] private Vector2 spawnDelayMinMax;
+    [SerializeField] private Transform bottomT;
     [SerializeField] private float baseVelocity = 3f;
     [SerializeField] private float maxSpeed = 20f;
     [SerializeField] private float baseMultiplier;
@@ -76,6 +77,10 @@ public class AsteroidSpawner
         asteroidT.position = spawnPosition;
         
         SetAsteroidPosition(asteroidT);
+        Vector3 target = bottomT.position;
+        target.x = Random.Range(xMinMax.x, xMinMax.y);
+        
+        asteroidMovement.direction = (target - asteroidT.position).normalized;
         
         asteroidGO.SetActive(true);
 
