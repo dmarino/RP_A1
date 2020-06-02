@@ -9,24 +9,39 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager instance;
 
     public Text scoreText;
-
-    public int nearMissScore=5;
-    public int normalAvoidScore=1;
-    public int asteroidDestroyedScore=2;
+    [SerializeField] private int asteroidDestroyedScore=10;
 
     private int score=0;
+    private bool isAlive;
 
 
-    void NearMiss(){
-        score+= nearMissScore;
-        //scoreText.text = score;
+    private void Start()
+    {
+        instance = this;
+        isAlive = true;
+        
+        StartCoroutine(TimeScoring());
     }
 
-    void NormalAvoid(){
-        score += normalAvoidScore;
-    }
 
-    void AsteroidDestroyed(){
+    private void Update()
+    {
+        scoreText.text = score.ToString("D12");
+    }
+    public void AsteroidDestroyed(){
         score += asteroidDestroyedScore;
+    }
+
+
+    public void PlayerDied(){
+        isAlive = false;
+    }
+
+    IEnumerator TimeScoring(){
+
+        while(isAlive){
+            score++;
+            yield return new WaitForSeconds (1f);
+        }
     }
 }
