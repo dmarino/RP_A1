@@ -51,5 +51,8 @@ MonoBehaviour:
         type: 3}
       startingInstances: 6
     xMinMax: {x: -8, y: 8}
-    xFactor: 1.2
-    yFactor: 1.2
+    spawnDelayMinMax: {x: 0, y: 3}
+    baseVelocity: 2
+    maxSpeed: 15
+    baseMultiplier: 0.2
+    increaseSpeed: 0.5

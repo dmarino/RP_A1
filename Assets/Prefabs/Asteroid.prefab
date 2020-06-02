@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6514629246846673404}
   - component: {fileID: 6514629246846673405}
   - component: {fileID: 6514629246846673346}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Asteroid
   m_TagString: Asteroid
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.7
 --- !u!50 &6514629246846673404
 Rigidbody2D:
   serializedVersion: 4

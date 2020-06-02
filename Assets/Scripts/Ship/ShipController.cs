@@ -26,15 +26,10 @@ public class ShipController : MonoBehaviour
     [SerializeField]
     private Transform shootingPoint;
 
-
     [SerializeField] GameObject gameOverScreen;
-
-
-
 
     //this is to chect that the player wont go out of bouds
     private Vector2 screenBounds;
-
 
     //reference to the rigidBody
     private Rigidbody2D rb;
@@ -58,6 +53,7 @@ public class ShipController : MonoBehaviour
         float yVel = _moveOffset * Input.GetAxis("Vertical");
 
         rb.velocity = new Vector2(xVel,yVel);
+
     }
 
 
@@ -85,6 +81,10 @@ public class ShipController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.tag.Equals("Asteroid")){
+
+            ScoreManager.instance.PlayerDied();
+            CancelInvoke("Fire");
+
             StartCoroutine(GameOver());
         }
     }

@@ -15,6 +15,8 @@ public class Asteroid : MonoBehaviour
 
             onRequireDestroy?.Invoke(this);
             Destroy(other.gameObject);
+
+            ScoreManager.instance.AsteroidDestroyed();
         }
     }
     
