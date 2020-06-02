@@ -133,6 +133,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2352151932347340813, guid: 00b25384dfd632a4ea84a7408f65da99,
+        type: 3}
+      propertyPath: asteroidSpawner.baseVelocity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352151932347340813, guid: 00b25384dfd632a4ea84a7408f65da99,
+        type: 3}
+      propertyPath: asteroidSpawner.baseMultiplier
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352151932347340813, guid: 00b25384dfd632a4ea84a7408f65da99,
+        type: 3}
+      propertyPath: asteroidSpawner.spawnDelayMinMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352151932347340813, guid: 00b25384dfd632a4ea84a7408f65da99,
+        type: 3}
+      propertyPath: asteroidSpawner.spawnDelayMinMax.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352151932347340813, guid: 00b25384dfd632a4ea84a7408f65da99,
+        type: 3}
+      propertyPath: asteroidSpawner.maxSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2352151932347340814, guid: 00b25384dfd632a4ea84a7408f65da99,
         type: 3}
       propertyPath: m_LocalPosition.x
