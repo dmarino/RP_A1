@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
         
     private void Awake()
     {
-        asteroidSpawner.Initialize();
+        asteroidSpawner.Initialize(this);
     }
     private void Update()
     {
