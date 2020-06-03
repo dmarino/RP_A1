@@ -1,0 +1,11 @@
+Ideate prototype 2:
+
+In this prototype we don't want to change anything that we have in the game but rather we want to expand it to help
+the issues in the first iteration.. we decided to:
+
+  - Add pickups:
+      With these we are trying to encourage the players to move more through all the screen making it more exiting  
+      (we ended up adding two pickups a money bag and a power up that gives you a faster gun for a certain time)
+
+  - Add variation in the asteroids:
+      With this we are trying to make the game less monotonous so the player won’t get bored easily 

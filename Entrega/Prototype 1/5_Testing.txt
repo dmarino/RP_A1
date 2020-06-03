@@ -1,0 +1,12 @@
+Testing prototype 1:
+
+ - people liked the scoring system:
+      they seem to enjoy getting points for the time played but they preferred destroying the asteroids rather 
+      than avoid them because like that they get more points
+
+ - too monotonous:
+       there is not much variety in the game and even if the asteroids moved faster as time went by 
+       the players got bored of the game quickly
+
+ - not Movement
+     The players spent most of their time at the bottom of the screen and didn’t move up and down 

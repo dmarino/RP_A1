@@ -1,0 +1,13 @@
+Space shooter:
+
+- Player must be able to keep score:
+      player likes to beat their own score or their friend's score so scoring system is a must
+
+- Player can destroy the objects or avoid them
+      player likes to feel powerful (destroying stuff) and exited (avoiding stuff) so we have to include ths mechanics
+
+- Player must move through all the screen       
+     for better control, this is tied to the feeling of power as well
+
+- Set on space (?    
+    Is a space shooter after all

@@ -1,0 +1,13 @@
+Ideate:
+
+  - basic space shooter
+
+  - this is for people that want to play these kinds of games but don't feel they have the ability 
+    to play the really complicated ones
+
+  - player gets score for staying alive (one point per second) making feel the player as it has accomplished 
+    something without a lot of effort
+
+  - Player gets extra points if it destroys the asteroids to make the player feel powerful
+
+  - The game will get harder as time goes by to avoid boredom 

@@ -1,0 +1,10 @@
+Testing prototype 2:
+
+ - Better movement:
+      Players went out of their way to get the pickups, they liked that the asteroids could move in different directions or collide with themselves making it harder to destroy 
+
+ - More powerful:
+      Players enjoyed the powerup because they could destroy more asteroids that way
+
+ - Not unique:
+       There are a lot of space shooters in the market, so the players weren’t impressed by the game
